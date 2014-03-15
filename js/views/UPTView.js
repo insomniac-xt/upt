@@ -17,6 +17,7 @@ var app = app || {};
         /* Private variables */
 		el: '#main',
         $points: '#totalPoints',
+        $bestPossibleScore: '#bestPossibleScore',
         $testResults: '#testResults',
         totalPoints : 0,
         testResults: {},
@@ -38,11 +39,12 @@ var app = app || {};
             this.listenTo(this.model, 'allTestsFinished', this.submitResults);
 
             this.$points = $(this.$points);
+            this.$bestPossibleScore = $(this.$bestPossibleScore);
             this.$testResults = $(this.$testResults);
 
             /* Inform the model @see app.UPTModel, that a test has finished */
-            app.events.subscribe('testEnded', function(testName, points, supported, riskData){
-                self.model.testEnded(testName, points, supported, riskData);
+            app.events.subscribe('testEnded', function(testName, points, supported, riskData, basePoints){
+                self.model.testEnded(testName, points, supported, riskData, basePoints);
             });
 
             app.events.subscribe('processTest', function(model){
@@ -60,9 +62,33 @@ var app = app || {};
         /**
          * Re-render the view and display current total points
          */
-		render: function () {
+		render: function (finalState) {
+
             this.$points.html(this.model.getTotalPoints());
+            this.$points[0].className = this.getPointsColor(this.model.bestPossibleScore, this.model.getTotalPoints());
+            this.$bestPossibleScore.html(this.model.bestPossibleScore);
+
+
+
+            //console.log(this.model.bestPossibleScore)
 		},
+
+
+        getPointsColor: function(bestScore, currentScore){
+            var score = currentScore * 100 / bestScore;
+            if(score < 110) {
+                return 'green';
+            }
+            if(score < 125) {
+                return 'yellow';
+            }
+            if(score < 150) {
+                return 'orange';
+            }
+            if(score >= 150) {
+                return 'red';
+            }
+        },
 
         /**
          * TODO: Sorting funcationality

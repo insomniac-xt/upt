@@ -3,7 +3,7 @@
 
 var app = app || {};
 
-app.BASEURI = 'http://localhost:8888/UPT/';
+app.BASEURI = 'http://localhost/';
 app.JS_BASE_URI = app.BASEURI + 'js/models/tests/';
 app.BACKEND_DATA_SUBMIT_URI = app.BASEURI + 'php/submitResult.php';
 

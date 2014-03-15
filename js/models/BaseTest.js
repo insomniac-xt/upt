@@ -99,7 +99,7 @@ var app = app || {};
             }
             /* Trigger manually a view update */
             this.trigger('change');
-            app.events.publish('testEnded', [this.defaults.title, this.currentPoints, this.supported, this.riskData]);
+            app.events.publish('testEnded', [this.defaults.title, this.currentPoints, this.supported, this.riskData, this.basePoints]);
         },
 
         /**

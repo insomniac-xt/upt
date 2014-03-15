@@ -91,6 +91,30 @@ body {
     margin: 10px 10px 0 0;
     color: #4d4d4d;
 }
+
+#totalPointsContainer > p {
+    font-size: 0.5em;
+    padding: 0;
+    margin: 0;
+}
+
+#totalPoints.red {
+    color: #d0000c;
+}
+
+#totalPoints.orange {
+    color: #FA8A10;
+}
+
+#totalPoints.yellow {
+    color: #FAD510;
+}
+
+#totalPoints.green {
+    color: #41B20B;
+}
+
+
 #totalPoints {
     font-size: 3.4em;
     line-height: 145px;

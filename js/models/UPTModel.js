@@ -28,6 +28,8 @@ var app = app || {};
         numberOfSupportedTests: 0,
         testsProcessedCount: 0,
 
+        bestPossibleScore: 0,
+
         testsSummary: {},
 
         /**
@@ -63,7 +65,7 @@ var app = app || {};
         /**
          * A test has finished. Store the results and calculate current total score.
          */
-        testEnded: function(testName, points, supported, riskData) {
+        testEnded: function(testName, points, supported, riskData, basePoints) {
 
             this.testsProcessedCount++;
 
@@ -71,6 +73,7 @@ var app = app || {};
             if(riskData) {
                 this.testResultsData[testName] = riskData;
                 this.numberOfSupportedTests++;
+                this.bestPossibleScore += basePoints;
             }
 
             /* All tests that completed */
