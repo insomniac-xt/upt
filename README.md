@@ -1,8 +1,8 @@
-# UPT Prototype
+## UPT Prototype
 
 * Intended to calculate and estimate potential privacy risks in user agents through HTML5 APIs
 
-# HOWTO get this APP runing
+### HOWTO get this APP runing
 
 * Setup an Apache Server with PHP and MySQL
 * Create the Database and table as instructed in sql/import.sql file (you can delete the test data included in it if you wish)
@@ -10,7 +10,7 @@
 * Open indx.html in your browser and you're ready to roll!
 
 
-# How do I add new Tests
+### How do I add new Tests
 
 * Write the Test 
 ** You can simply copy any existing test 
@@ -21,7 +21,7 @@
 * Add your test name to the config, found in /js/conf/config.js
 
 
-# Configuration
+### Configuration
 
 * All configation can be done in /js/conf/conf.js
 * User agent specific tests can be adjustet in every test separately
@@ -29,7 +29,7 @@
 
 
 
-# My user agent is not recognized (correctly)
+### My user agent is not recognized (correctly)
 
 * Open up UserAgent.js
 * Adjust dataBrowser, dataOS and platforms
