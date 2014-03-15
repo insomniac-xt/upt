@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="demo_form.asp">
+    E-mail: <input type="email" name="usremail">
+    <input type="submit">
+</form>
+
+<script>
+    /*var input = document.getElementsByTagName('input')[0]
+    var event = document.createEvent('TextEvent');
+    event.initTextEvent('textInput', true, true, null,'b');
+
+    input.value = "";
+    input.selectionStart = 0;
+    input.selectionEnd = 0;
+    input.focus();
+    input.dispatchEvent(event); */
+    var input = document.getElementsByTagName('input')[0];
+    input.autofocus = true;
+    input.focus();
+
+
+    window.setTimeout(function(){
+
+        var event = document.createEvent('TextEvent');
+        //event.initTextEvent('textInput', true, true, null, 'b');
+        event.initTextEvent('textInput', true, true, null,'b', 9, 'en-US');
+
+        input.value = "";
+        input.selectionStart = 0;
+        input.selectionEnd = 0;
+        input.focus();
+        input.dispatchEvent(event);
+        console.log(input.value)
+    }, 1000);
+
+    window.setTimeout(function(){
+        console.log(input.value)
+    }, 2000);
+</script>
+
+
+</body>
+</html>

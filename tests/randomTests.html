@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" data-framework="backbonejs">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>UPT</title>
+        <style>
+            body {
+                background-color: blue !important;
+            }
+        </style>
+	</head>
+	<body>                                                                 <!-- ondragstart="event.dataTransfer.setData('text/plain', JSON.stringify(window.localStorage));" -->
+        <div label="Drag Me" id="dragSource" draggable="true">DRAGME</div>
+        <div label="Drop Here" ondrop="dropHandler(event)" ondragover="allowDrop(event)" >DROPHERE</div>
+        <script>
+
+            document.getElementById('dragSource').addEventListener('dragstart', function(evt) {
+                console.log("The 'dragstart' event fired.");
+                evt.dataTransfer.setData('text/plain', JSON.stringify(window.localStorage));
+            }, false);
+
+
+            function dropHandler(event) {
+                console.log("droppped")
+            }
+
+            function allowDrop(ev)
+            {
+                ev.preventDefault();
+            }
+        </script>
+       <iframe seamless ondragover="allowDrop(event)" ondrop="dropHandler(event)" src="http://localhost:8888/master-thesis/v2/tests/iframe.html?88" width="300" height="300"></iframe>
+
+        <section id="main">
+
+            <section id="totalPointsContainer"><span id="totalPoints"></span></section>
+
+            <section id="testResults"></section>
+
+            <img src="img.svg" />
+
+        </section>
+
+
+
+
+		<section id="todoapp">
+
+			<!--<header id="header">
+				<h1>todos</h1>
+				<input id="new-todo" placeholder="What needs to be done?" autofocus>
+			</header>-->
+
+		</section>
+		<footer id="info">
+
+		</footer>
+
+
+
+		<script type="text/template" id="item-template">
+			<div class="view">
+				Name: <label><%- title %></label><br />
+                Points: <label><%- points %></label>
+			</div>
+		</script>
+
+
+		<script src="../bower_components/jquery/jquery.js"></script>
+        <script src="../bower_components/modernizr/modernizr.custom.26465.js"></script>
+		<script src="../bower_components/underscore/underscore.js"></script>
+		<script src="../bower_components/backbone/backbone.js"></script>
+
+
+	</body>
+</html>

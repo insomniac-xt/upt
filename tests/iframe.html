@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" data-framework="backbonejs">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <script>
+            function dropHandler(event) {
+                event.preventDefault();
+                console.log(event.dataTransfer.getData("text/plain"));
+            }
+
+            function allowDrop(ev)
+            {
+                ev.preventDefault();
+                console.log('test:' + ev.dataTransfer.getData("text/plain"));
+            }
+        </script>
+	</head>
+	<body ondrop="dropHandler(event)" ondragover="allowDrop(event)">
+    <video></video>
+    <script>
+        //alert(performance.timing.connectStart);
+        /*navigator.mozGetUserMedia({
+                    video: true,
+                    audio: true
+                },
+                // successCallback
+                function(localMediaStream) {
+                    var video = document.querySelector('video');
+                    video.src = window.URL.createObjectURL(localMediaStream);
+                    video.onloadedmetadata = function(e) {
+                        // Do something with the video here.
+                    };
+                },
+                // errorCallback
+                function(err) {
+                    console.log("The following error occured: " + err);
+                }); */
+    </script>
+
+    <div style="width:500px; height: 500px; background-color: #dd0000"></div>
+	</body>
+</html>

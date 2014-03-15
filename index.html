@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" data-framework="backbonejs">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Link" content="<php/prefetchTest.php>; rel=prefetch">
+		<title>UPT</title>
+		<link rel="stylesheet" href="css/base.css">
+	</head>
+	<body>
+	<div class="row">
+        <h1><strong>U</strong>ser agent <strong>P</strong>rivacy <strong>T</strong>ester</h1>
+        <div id="userAgentData">
+
+        </div>
+        <div id="testsSummary">
+
+        </div>
+        <section id="main">
+
+
+            <!--<div id="sorting"><a id="sortHighest" href="#">Highest</a></div>-->
+
+                <div id="totalPointsContainer">
+                    <span>Total points for your browser:</span> <span id="totalPoints"></span></div>
+
+            <section >
+                <ul id="testResults">
+
+                </ul>
+            </section>
+
+
+        </section>
+
+
+
+		<footer id="info">
+
+		</footer>
+
+        <!--<img src="tests/img.svg" />-->
+
+
+        <link rel="prefetch" href="php/prefetchTest.php">
+        <link rel="prerender" href="php/prefetchTest.php">
+        <link rel="dns-prefetch" href="php/prefetchTest.php">
+        <link rel="next" href="php/prefetchTest.php">
+
+
+        <script type="text/template" id="uaData-template">
+            <ul>
+                <li><span><b>Name:</b> <%- name %></span></li>
+                <li><span><b>Version:</b> <%- version %></span></li>
+                <li><span><b>Platform:</b> <%- platform %></span></li>
+            </ul>
+        </script>
+
+
+		<script type="text/template" id="item-template">
+			<div class="view">
+                <h3>Name: <label><%- title %></label></h3>
+                <ul>
+
+                    <li><span>Basic support: </span><%= supported ?  '<span class="green">YES</span>' : '<span>NO</span>' %></li>
+                    <li><span>Base points: </span><span><%- basePoints %></span></li>
+                    <li><span>Your points: </span><span><%- yourPoints %></span></li>
+                    <li><span>Strict Policy: </span><span><%= strictPolicy ? '<span class="green">YES</span>' : '<span class="red">NO</span>' %></span></li>
+                    <li><span>Simple Management: </span><span><%= management ? '<span class="green">YES</span>' : '<span class="red">NO</span>'%></span></li>
+                </ul>
+
+			</div>
+		</script>
+
+		<script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/modernizr/modernizr.custom.26465.js"></script>
+		<script src="bower_components/underscore/underscore.js"></script>
+		<script src="bower_components/backbone/backbone.js"></script>
+
+        <script src="js/conf/config.js"></script>
+        <script src="js/Events.js"></script>
+        <script src="js/UserAgent.js"></script>
+        <script src="js/models/BaseTest.js"></script>
+        <script src="js/models/UPTModel.js"></script>
+        <script src="js/views/BaseTest.View.js"></script>
+        <script src="js/RiskEstimator.js"></script>
+        <script src="js/views/UPTView.js"></script>
+        <script src="js/UATester.utils.js"></script>
+        <script src="js/UATester.js"></script>
+		</div>
+	</body>
+</html>

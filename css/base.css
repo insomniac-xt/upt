@@ -1,0 +1,350 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+    font-size: 100%;
+}
+
+
+body {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	line-height: 1.4em;
+    font-weight: normal;
+    font-style: normal;
+	background: #eaeaea url('../assets/bg.png');
+	color: #4d4d4d;
+	/*width: 550px;*/
+	margin: 0 auto;
+    padding: 20px 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+.row {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1015px;
+}
+.row > h1 {
+    position: relative;
+    min-height: 80px;
+    line-height: 80px;
+    padding: 0 0 0 22px;
+    background: rgba(255,255,255,.6);
+    text-shadow: 1px 1px 0px #a1a1a1;
+}
+
+#userAgentData {
+    position: relative;
+    min-height: 20px;
+    line-height: 25px;
+    padding: 0 0 0 12px;
+    margin: 0 0 20px 0;
+    background: rgba(255,255,255,.6);
+}
+
+#sorting {
+    margin: 0 0 20px;
+}
+#sorting > a {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background: rgba(0,146,191,.9);
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+    text-shadow: 1px 1px 0px #333;
+}
+#sorting > a:hover {
+    background: rgba(0,146,191,.6);
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+#totalPointsContainer {
+    min-height: 145px;
+    font-size: 2.3em;
+    line-height: 40px;
+    font-weight: bold;
+    background: rgba(255,255,255,.6);
+    padding-left: 34px;
+
+}
+#totalPointsContainer > span {
+    display: inline-block;
+    vertical-align: middle;
+    text-transform: uppercase;
+    color: #0092bf;
+    text-shadow: 1px 1px 0px #a1a1a1;
+}
+#totalPointsContainer > span:first-child {
+    margin: 10px 10px 0 0;
+    color: #4d4d4d;
+}
+#totalPoints {
+    font-size: 3.4em;
+    line-height: 145px;
+}
+
+#todoapp {
+	background: #fff;
+	background: rgba(255, 255, 255, 0.9);
+	margin: 130px 0 40px 0;
+	border: 1px solid #ccc;
+	position: relative;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2),
+				0 25px 50px 0 rgba(0, 0, 0, 0.15);
+}
+#testResults {
+    margin: 30px 0 0;
+    padding: 0;
+    background: #d9d9d9;
+}
+
+#testResults > li {
+    min-height: 100px;
+    width: 48%;
+    margin: 1%;
+    display: inline-block;
+    box-shadow: 0 7px 7px -6px #777;
+    background: rgba(255,255,255,.6);
+    -webkit-transition: width 0.8s;
+    -moz-transition: width 0.8s;
+    -o-transition: width 0.8s;
+    transition: width 0.8s;
+}
+
+
+#footer {
+	color: #777;
+	padding: 0 15px;
+	position: absolute;
+	right: 0;
+	bottom: -31px;
+	left: 0;
+	height: 20px;
+	z-index: 1;
+	text-align: center;
+}
+
+
+span.green {
+    color: darkgreen;
+}
+
+span.red {
+    color: red;
+}
+
+.testView.inactive span {
+    color: #aeaeae;
+}
+
+span.grey {
+    color: dimgrey;
+}
+
+.view {
+    border: 1px solid #fff;
+
+}
+.view h3 {
+    font-size: 1em;
+    padding: 5px 20px;
+    margin: 0 0 5px;
+    box-shadow: 0 7px 7px -7px #777;
+}
+
+.testView.inactive {
+    background-color: white;
+}
+
+.testView.RED h3 {
+    background-color: red;
+    color: #fff;
+}
+
+.testView.ORANGE h3 {
+    background-color: orange;
+    color: #fff;
+}
+
+.testView.YELLOW h3 {
+    background-color: yellow;
+}
+
+.testView.GREY h3 {
+    background-color: #bbbbbb;
+}
+
+#testResults .testView.inactive {
+    background: url('../assets/bg-stripe.png') repeat;
+    color: #aeaeae;
+}
+
+.view ul{
+    padding: 0 0 10px 20px;
+}
+
+.view li {
+    display: table;
+}
+
+.view li span {
+    display: table-cell;
+    width: 150px;
+    font-size: 0.9em;
+}
+
+#userAgentData li {
+    display: inline;
+    margin-left: 20px;
+}
+
+#userAgentData span {
+    display: inline-block;
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	#toggle-all,
+	#todo-list li .toggle {
+		background: none;
+	}
+
+	#todo-list li .toggle {
+		height: 40px;
+	}
+
+	#toggle-all {
+		top: -56px;
+		left: -15px;
+		width: 65px;
+		height: 41px;
+		-webkit-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+		transform: rotate(90deg);
+		-webkit-appearance: none;
+		appearance: none;
+	}
+}
+
+.hidden {
+	display: none;
+}
+
+
+
+@media (min-width: 899px) {
+	.learn-bar {
+		width: auto;
+		margin: 0 0 0 300px;
+	}
+
+	.learn-bar > .learn {
+		left: 8px;
+	}
+
+	.learn-bar #todoapp {
+		width: 550px;
+		margin: 130px auto 40px auto;
+	}
+}
+@media screen and (min-width: 1250px) {
+    #testResults > li {
+        width: 31.3%;
+        -webkit-transition: width 0.8s;
+        -moz-transition: width 0.8s;
+        -o-transition: width 0.8s;
+        transition: width 0.8s;
+    }
+}
+@media screen and (max-width: 1104px) {
+    #totalPointsContainer > span {
+        display: block;
+        float: left;
+        width: 55%;
+        text-align: center;
+    }
+    #totalPointsContainer > span:first-child {
+        max-width: 45%;
+        margin: 0;
+        padding-top: 33px;
+        font-size: 0.85em;
+    }
+}
+@media screen and (max-width: 844px) {
+    body {
+        margin: 0;
+    }
+    .row {
+        width: 90%;
+    }
+    #testResults > li {
+        width: 98%;
+        -webkit-transition: width 0.8s;
+        -moz-transition: width 0.8s;
+        -o-transition: width 0.8s;
+        transition: width 0.8s;
+    }
+    #totalPointsContainer > span {
+        width: 55%;
+        text-align: center;
+    }
+    #totalPointsContainer > span:first-child {
+        font-size: 0.7em;
+        line-height: 30px;
+        padding-top: 42px;
+        text-align: left;
+    }
+    .row h1 > span {
+        display: block;
+    }
+}
+@media screen and (max-width: 672px) {
+    #totalPointsContainer > span:first-child {
+        font-size: 0.5em;
+        line-height: 30px;
+        padding-top: 42px;
+        text-align: left;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 568px) {
+    #totalPointsContainer {
+        padding: 20px 20px 0;
+    }
+    #totalPointsContainer > span {
+        float: none;
+        max-width: none;
+        width: 100%;
+        font-size: 2.4em;
+    }
+    #totalPointsContainer > span:first-child {
+        max-width: none;
+        width: 100%;
+        padding: 0;
+        font-size: 0.4em;
+    }
+}
+/*@media screen and (min-width: 320px) and (max-width: 568px) {
+    #totalPointsContainer {
+        padding: 20px 20px 0;
+    }
+    #totalPointsContainer > span {
+        float: none;
+        max-width: none;
+        width: 100%;
+    }
+}*/
