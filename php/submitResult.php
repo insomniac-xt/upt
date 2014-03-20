@@ -23,7 +23,7 @@ function sanitizeInput($data)
   $data = trim($data);
   $data = stripslashes($data);
   $data = htmlspecialchars($data, ENT_NOQUOTES);
-  $data = mysql_real_escape_string($uniqueId);
+  $data = mysql_real_escape_string($data);
   return $data;
 }
 
